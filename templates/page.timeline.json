@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "s_timeline",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,0 +1,76 @@
+<!doctype html>
+<html class="no-js " lang="{{ shop.locale }}">
+  <head>
+    <link fetchpriority="high" rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0507/6097/4513/files/20210425_201804_1_720x.jpg?v=1637257144">
+    
+    <link rel="preload" as="script" href="{{ 'vendor.js' | asset_url }}">
+    <link rel="preload" as="script" href="{{ 'api.jquery.js' | asset_url }}">
+    <link rel="preload" as="script" href="{{ 'theme.js' | asset_url }}">
+    <link rel="preconnect" href="https://cdn.shopify.com">
+    {% comment %}
+    <!-- {{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %} -->
+    {% endcomment %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="{{ settings.color_header_bg }}">
+    {%- if settings.favicon != blank -%}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+    {%- endif -%}
+    <link rel="canonical" href="{{ canonical_url }}">
+    <title>
+      Pearl of my heart
+    </title>
+    {%- if page_description -%}
+    <meta name="description" content="{{ page_description | escape }}">
+    {%- endif -%}
+    {%- include 'social-meta-tags' -%}
+    {%- include 'header-css' -%}
+    {{ content_for_header }}
+  </head>
+  <body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} body-theme {% if settings.productpage == 'product-2' or settings.productpage == 'product-6' or settings.productpage == 'product-7' %} product-hide-breadcrumb {% endif %}" >
+    {%- section 'announcement-bar' -%}
+    {%- include 'loading' -%}
+    {%- include 'header' -%}
+    <div class="page-container page-element is-moved-by-drawer">
+      {%- include 'breadcrumb' -%}
+      <main class="main-content" id="MainContent" role="main">
+        {%- if settings.enable_animationscroll -%}<div id ="js-scroll">{% endif%}
+          {%- if settings.enable_animationscroll -%}<div data-scroll-section>{% endif%}
+        {%- include 'slideshow' -%}
+        {%- if settings.enable_animationscroll -%}</div>{% endif%}
+        {{ content_for_layout }}
+        {%- if settings.enable_animationscroll -%}</div>{% endif%}
+      </main>
+      {%- include 'footer' -%}
+      {%- include 'popup-newsletter' -%}
+      {%- section 'product-suggest' -%}
+      {%- section 'recently-viewed' -%}
+    </div>
+    {%- include 'cookie-policy' -%}
+    {%- include 'back-to-top' -%}
+    {%- include 'menu-mobile' -%}
+    {%- include 'notify-popup' -%}
+    {%- include 'bottom-contents' -%}
+    {%- include 'quickview' -%}
+    {%- include 'popup-compare' -%}
+    {%- include 'header-js' -%}
+    {%- if settings.show_multiple_currencies -%}
+    {{ "/services/javascripts/currencies.js" | script_tag }}
+    {%- endif -%}
+    <script>
+      function toggleClassSearch(){
+        document.getElementById("form-search-header").classList.toggle("active");
+        document.getElementsByClassName("overlay")[0].classList.toggle("active");
+        document.getElementById("SiteNavSearch").focus();
+      }
+      function myFunction(x) {
+      x.classList.toggle("change");
+     }
+    
+    </script>
+        
+        <script src="{{ 'lazysizes.min.js' | asset_url }}" async="async"></script>
+
+  </body>
+</html>

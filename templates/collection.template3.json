@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "product-grid": {
+      "type": "collection-template-3",
+      "settings": {}
+    }
+  },
+  "order": [
+    "product-grid"
+  ]
+}
