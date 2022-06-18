@@ -1,39 +1,53 @@
 <!doctype html>
 <html class="no-js " lang="{{ shop.locale }}">
   <head>
-    <link fetchpriority="high" rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0507/6097/4513/files/20210425_201804_1_720x.jpg?v=1637257144">
+    {% if template contains 'index' %}
+    <link fetchpriority="high" rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0507/6097/4513/files/lcp.webp?v=1655518795&width=400">
+    {% endif %}
+    {% if request.path contains 'family-bundle-diy-keepsake' %}
+    <link fetchpriority="high" rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0507/6097/4513/products/familykit_3f4a999b-f5e6-471b-a2c2-3c8be46678bc_1200x.webp?v=1655562587">
+    {% endif %}
+    {% if request.path contains 'romance-bundle-diy-keepsake' %}
+    <link fetchpriority="high" rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0507/6097/4513/products/natalie_1_1200x.jpg?v=1655557426">
+    {% endif %}
+    {% if request.path contains 'memory-bundle-diy-keepsake' %}
+    <link fetchpriority="high" rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0507/6097/4513/products/JaneAdams_a06f57f4-94bf-4416-a7d7-f06cc23167a7_1200x.webp?v=1655562605">
+    {% endif %}
+    {% if request.path contains 'pearls-luxurious-decoration-pack' %}
+    <link fetchpriority="high" rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0507/6097/4513/products/10_1200x.jpg?v=1606901115">
+    {% endif %}
+    {% if request.path contains 'baby-bundle-diy-keepsake' %}
+    <link fetchpriority="high" rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0507/6097/4513/products/varneyfamily2-square_1200x.jpg?v=1654701601">
+    {% endif %}
+    {% if request.path contains 'proud-parent-bundle-diy-keepsake' %}
+    <link fetchpriority="high" rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0507/6097/4513/products/Lluciana_h9_9c9952c1-0470-454c-9ab0-eea3c47c8220_1200x_1_1200x.jpg?v=1655565587">
+    {% endif %}
     
-    <link rel="preload" as="script" href="{{ 'vendor.js' | asset_url }}">
-    <link rel="preload" as="script" href="{{ 'api.jquery.js' | asset_url }}">
-    <link rel="preload" as="script" href="{{ 'theme.js' | asset_url }}">
-    <link rel="preconnect" href="https://cdn.shopify.com">
-    {% comment %}
-    <!-- {{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %} -->
-    {% endcomment %}
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="theme-color" content="{{ settings.color_header_bg }}">
-    {%- if settings.favicon != blank -%}
-    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
-    {%- endif -%}
-    <link rel="canonical" href="{{ canonical_url }}">
-    <title>
-      Pearl of my heart
-    </title>
-    {%- if page_description -%}
-    <meta name="description" content="{{ page_description | escape }}">
-    {%- endif -%}
-    {%- include 'social-meta-tags' -%}
-    {%- include 'header-css' -%}
-    {{ content_for_header }}
-  </head>
-  <body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} body-theme {% if settings.productpage == 'product-2' or settings.productpage == 'product-6' or settings.productpage == 'product-7' %} product-hide-breadcrumb {% endif %}" >
-    {%- section 'announcement-bar' -%}
-    {%- include 'loading' -%}
-    {%- include 'header' -%}
+    <link rel="preload" as="style" href="{{ 'theme.scss.css' | asset_url }}">
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta name="theme-color" content="{{ settings.color_header_bg }}">
+      {%- if settings.favicon != blank -%}
+      <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+      {%- endif -%}
+      <link rel="canonical" href="{{ canonical_url }}">
+      <title>
+        Pearl of my heart
+      </title>
+      {%- if page_description -%}
+      <meta name="description" content="{{ page_description | escape }}">
+      {%- endif -%}
+      {%- include 'social-meta-tags' -%}
+      {%- include 'header-css' -%}
+      {{ content_for_header }}
+    </head>
+    <body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} body-theme {% if settings.productpage == 'product-2' or settings.productpage == 'product-6' or settings.productpage == 'product-7' %} product-hide-breadcrumb {% endif %}" >
+      {%- include 'header' -%}
+      <!-- {%- section 'announcement-bar' -%} -->
+      {%- include 'loading' -%}
     <div class="page-container page-element is-moved-by-drawer">
-      {%- include 'breadcrumb' -%}
+      <!-- {%- include 'breadcrumb' -%} -->
       <main class="main-content" id="MainContent" role="main">
         {%- if settings.enable_animationscroll -%}<div id ="js-scroll">{% endif%}
           {%- if settings.enable_animationscroll -%}<div data-scroll-section>{% endif%}
