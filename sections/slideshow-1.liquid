@@ -195,9 +195,7 @@
   cursor: inherit;
 }
 
-.slideshow__text-wrap--mobile {
-  display: none;
-}
+
 
 @media only screen and (min-width:750px) {
   .slideshow__text-content {
@@ -301,9 +299,7 @@
 }
 
 @media (min-width:750px) {
-  .slideshow__text-content--mobile {
-    display: none!important;
-  }
+
 }
 
 .slideshow__text-content--mobile .container{
@@ -325,9 +321,7 @@
     padding-top: 0;
   }
 
-  .slideshow__text-content--mobile::after { 
-    display: none;
-  }
+ 
 }
 
 .slideshow__title {
@@ -349,12 +343,7 @@
 
 {%- unless section.settings.slideshow_mobile -%}
 @media only screen and (max-width:749px) {
-  .slideshow__subtitle,.slideshow__title,.slideshow__toptitle {
-    display: none;
-  }
-  .slideshow__btn {
-    display: none;
-  }
+
 }
 {%- endunless -%}
 
@@ -371,7 +360,6 @@
 }
 
 .slideshow__subtitle--mobile,.slideshow__title--mobile {
-  display: none;
   color: #3d4246;
 }
 
@@ -389,12 +377,12 @@
 @media only screen and (min-width:750px) {
   .slideshow__btn-wrapper--push {
     margin-top: 50px;
+    
   }
 }
 
 
 .slideshow__btn--mobile {
-  display: none;
   margin: 1.3rem auto 0;
 }
 
@@ -404,6 +392,7 @@
   }
   .slideshow__btn-wrapper--push {
     margin-top: 32px;
+    text-align: center;
   }
 }
 
@@ -545,15 +534,6 @@
       {%- assign text_vertical_alignment = text_alignments.last | strip -%}
       
       <div class="slideshow__slide slideshow__slide--{{ block.id }}" {{ block.shopify_attributes }} style="background-color: {{block.settings.bgwrap}};">
-        {%- if block.settings.image == blank -%}
-        <div class="slideshow__image js">
-          <div class="placeholder-background">
-            {%- capture current -%}{%- cycle 1, 2 -%}{%- endcapture -%}
-            {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
-          </div>
-          {%- if section.settings.show_overlay -%}<div class="slideshow__overlay {% if section.settings.gradient_overlay %} gradient_overlay {% endif %}"></div>{%- endif -%}
-        </div>
-        {%- else -%}
         <div class="d-none d-lg-block slideshow__image box ratio-container lazyload js{%- unless forloop.first -%} lazypreload{%- endunless -%}"
              data-bgset="{%- include 'bgset', image: block.settings.image -%}"
              data-sizes="auto"
@@ -565,12 +545,36 @@
         {% if block.settings.image_mobile != blank%}
         {%- assign image_mb = block.settings.image_mobile -%}
         {%- if section.settings.slideshow_mobile -%}
-        <div class="img_mobile d-lg-none slideshow__image box ratio-container lazyload js{%- unless forloop.first -%} lazypreload{%- endunless -%}"
+        <!-- <div class="img_mobile d-lg-none slideshow__image box ratio-container lazyload js{%- unless forloop.first -%} lazypreload{%- endunless -%}"
               data-bgset="{%- include 'bgset', image: block.settings.image_mobile -%}"
               data-sizes="auto"
               data-parent-fit="cover">
               {%- if section.settings.show_overlay -%}<div class="slideshow__overlay {% if section.settings.gradient_overlay %} gradient_overlay {% endif %}"></div>{%- endif -%}
+        </div> -->
+        <div style="z-index: 100000; position: absolute; bottom: 50px; left: 0; padding: 20px;" class="die-1">
+          <h2 style="margin-bottom: 3.5rem; text-align: center; font-size: 30px; letter-spacing: .2em; font-weight: 500; color: {{block.settings.slide_title_color}};"> {{ block.settings.slide_title }}</h2>
+          <style>
+            .slideshow__btn{{block.id}}{
+              background-color:{{block.settings.bg_button}};
+              color:{{block.settings.color_button}};
+            }
+            .slideshow__btn{{block.id}}:before{
+              background-color:{{block.settings.bg_button_hover}};
+            }
+            .slideshow__btn{{block.id}}:hover{
+              color:{{block.settings.color_button_hover}};
+            }
+            .slideshow__btn{{block.id}}:hover:before{
+              background-color:{{block.settings.bg_button_hover}};
+            }
+          </style>
+          <div class="slideshow__btn-wrapper{% if block.settings.slide_title != blank or block.settings.subheading != blank %} slideshow__btn-wrapper--push{% endif %}" >
+            <a href="{{ block.settings.button_link }}" class="btn gradient-theme slideshow__btn slideshow__btn{{block.id}} {%if block.settings.stylebtn %} btn-theme {% else %}  btn-underline {% endif %}">
+              <span>{{ block.settings.button_label | escape }}</span>
+            </a>
+          </div>
         </div>
+        <img class="img_mobile" style="z-index: 0; width: 100%;object-fit: cover;" src="{{ image_mb | image_url: width: 400 }}" alt="">
         {%- else -%}
         <div class="img_mobile d-lg-none image-content__image-wrapper position-relative" style="padding-top:{{ 1 | divided_by: image_mb.aspect_ratio | times: 100}}%;" >
           {%- assign img_mburl = image_mb | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
@@ -580,15 +584,14 @@
                data-sizes="auto"
                alt="{{ img_mburl.alt | escape }}">
         </div>
-        {%- endif -%}
         {% endif %}
         {%- endif -%}
 
-        <div class="slideshow__text-wrap slideshow__text-wrap--desktop">
+        <!-- <div class="slideshow__text-wrap slideshow__text-wrap--desktop">
           <div class="slideshow__text-content slideshow__text-content--vertical-{{ text_vertical_alignment }} text-{{ text_horizontal_alignment }}">
             <div class="container" data-aos="fade" data-aos-anchor-placement="top-bottom"  data-aos-once="true">
               
-              <div style="opacity: 0; transition: all ease-in 1000ms;" class="die-1 d-inline-block text-{% if text_horizontal_alignment == 'right' %}left{% else %}{{text_horizontal_alignment}}{% endif %} ">
+              <div class="die-1 d-inline-block text-{% if text_horizontal_alignment == 'right' %}left{% else %}{{text_horizontal_alignment}}{% endif %} ">
               <ul class="list-unstyled"  >
                 {%- unless block.settings.slide_toptitle == blank -%}
                 <li class="mb-2">
@@ -642,7 +645,7 @@
              </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       {%- endfor -%}
     </div>
@@ -710,14 +713,6 @@
   </div>
   {%- endif -%}
 </div>
-<script>
-  setTimeout(() => {
-    let heroContent = document.querySelector('.die-1')
-    heroContent.style.opacity = '1';
-
-  }, 1000)
-
-</script>
 {% schema %}
 {
   "name": "Slideshow 1",
