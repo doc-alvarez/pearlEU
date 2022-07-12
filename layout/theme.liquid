@@ -42,7 +42,9 @@
       {%- include 'header-css' -%}
       {{ content_for_header }}
       <script src="{{ 'transFix.js'| asset_url}}" defer></script>
-    </head>
+    	{% render 'vitals-loader' %}
+
+</head>
     <body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} body-theme {% if settings.productpage == 'product-2' or settings.productpage == 'product-6' or settings.productpage == 'product-7' %} product-hide-breadcrumb {% endif %}" >
       {%- include 'header' -%}
       <!-- {%- section 'announcement-bar' -%} -->
@@ -87,5 +89,8 @@
         
         <script src="{{ 'lazysizes.min.js' | asset_url }}" async="async"></script>
 
-  </body>
+  
+{% render 'oneclickupsellapp-theme', oneclickupsellapp: oneclickupsellapp %}
+{% assign oneclickupsellapp = true %}
+</body>
 </html>
