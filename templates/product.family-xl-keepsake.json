@@ -14,9 +14,9 @@
         "variant_available_enable": false,
         "wailist": false,
         "product_selector": "select",
-        "sizeguide_enable": false,
+        "sizeguide_enable": true,
         "sizeguide_title": "Size guide",
-        "sizeguide_page": "eng-size-chart",
+        "sizeguide_page": "size-chart-family-xl-kit",
         "fake_view_enable": false,
         "fake_view_min": 12,
         "fake_view_max": 30,
@@ -65,8 +65,8 @@
           "settings": {
             "width": "50%",
             "align": "center",
-            "video_url": "https:\/\/vimeo.com\/718296458",
-            "cover_image": "shopify:\/\/shop_images\/Untitled_design_1_bef325e2-195e-4745-9a98-eb91fa9c041d.jpg",
+            "video_url": "https:\/\/vimeo.com\/718296604",
+            "cover_image": "shopify:\/\/shop_images\/Untitled_design_4_bd4acebe-c594-451a-809b-bb4cbcad5d5e.jpg",
             "cover_image_position": "center center",
             "cover_image_height": "tall",
             "show_overlay": true,
@@ -119,7 +119,7 @@
         "16554843654c30d44c-0": {
           "type": "html",
           "settings": {
-            "code": "<div style=\"display: flex; flex-direction: column; gap: 20px; padding: 10px\">\n<h1>Why you need a keepsake?<\/h1>\n<div>💖  Set Happy Memories In Stone<\/div>\n<div>🥰  Spend Quality Time Together<\/div>\n<div>🎁  Best Gift for Every Occasion<\/div>\n<div>📷  Incomparable to Photos<\/div>\n<div>🏠  Unique Decoration Piece<\/div>\n<\/div>",
+            "code": "<div style=\"display: flex; flex-direction: column; gap: 20px; padding: 10px\">\n<h1>Why you need a keepsake?<\/h1>\n<div style=\"padding-left: 10%;\">\n<div>💖  Set Happy Memories In Stone<\/div>\n<div>🥰  Spend Quality Time Together<\/div>\n<div>🎁  Best Gift for Every Occasion<\/div>\n<div>📷  Incomparable to Photos<\/div>\n<div>🏠  Unique Decoration Piece<\/div>\n<\/div>\n<\/div>",
             "width": "50%",
             "align": "center"
           }
@@ -197,7 +197,7 @@
             "width": "50%",
             "align": "center",
             "video_url": "https:\/\/vimeo.com\/719080357",
-            "cover_image": "shopify:\/\/shop_images\/Untitled_design_8_45ae48c6-7af7-4836-9828-1e6abfe21beb.jpg",
+            "cover_image": "shopify:\/\/shop_images\/chrissieteam_5_59dd18c9-76c8-4a60-ad90-842f221be70e.jpg",
             "cover_image_position": "center center",
             "cover_image_height": "short",
             "show_overlay": true,
@@ -208,7 +208,7 @@
         "165548495451e7e3f8-0": {
           "type": "html",
           "settings": {
-            "code": "<div style=\"display: flex; flex-direction: column; gap: 20px; padding: 10px\">\n<h1>What makes us special?<\/h1>\n<div>✅ Good result or FREE replacement<\/div>\n<div>🥰 50.000+ happy customers<\/div>\n<div>💖Ready in 3 easy steps<\/div>\n<div>👨‍👩‍👦 Approved by dermatologists<\/div>\n<div>🚚 Ordered today, delivered in 1-4 days<\/div>\n<\/div>",
+            "code": "<div style=\"display: flex; flex-direction: column; gap: 20px; padding: 10px\">\n<h1>What makes us special?<\/h1>\n<div style=\"padding-left: 10%;\">\n<div>✅ Good result or FREE replacement<\/div>\n<div>🥰 50.000+ happy customers<\/div>\n<div>💖Ready in 3 easy steps<\/div>\n<div>👨‍👩‍👦 Approved by dermatologists<\/div>\n<div>🚚 Ordered today, delivered in 1-4 days<\/div>\n<\/div>\n<\/div>",
             "width": "50%",
             "align": "center"
           }

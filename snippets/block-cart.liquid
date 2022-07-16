@@ -14,8 +14,8 @@
       {{'cart.general.taxes_and_shipping_at_checkout' | t}}
     </div>
     <div class="mini-cart-btns mt-4">
-      <a style="padding: 17px 71px; border-radius: 50px; font-size: 18px;" class="btn gradient-theme js-cart-btn-checkout btn-theme w-100 {% if cart.item_count == 0 %} disabled{% endif %}" href="/checkout">{{'cart.general.checkout' | t }}</a>
-      <a class="btn btn-link btn-sm js-cart-btn-cart" href="/cart">{{'cart.general.update' | t }}</a>
+      <a style="padding: 17px 71px; border-radius: 50px; font-size: 18px;" class="btn gradient-theme js-cart-btn-checkout btn-theme w-100 {% if cart.item_count == 0 %} disabled{% endif %}" href="{% if shop.locale != 'en' %}/{{shop.locale}}{% endif %}/checkout">{{'cart.general.checkout' | t }}</a>
+      <a class="btn btn-link btn-sm js-cart-btn-cart" href="{% if shop.locale != 'en' %}/{{shop.locale}}{% endif %}/cart">{{'cart.general.update' | t }}</a>
     </div>
 
     {%- if settings.safe_checkout_pcart != blank -%}

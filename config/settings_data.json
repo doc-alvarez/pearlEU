@@ -19,7 +19,7 @@
     "logo": "shopify:\/\/shop_images\/lpg-logo_79ccd938-0fd5-4448-a168-ef4e7c4281be.png",
     "logo_white": "shopify:\/\/shop_images\/lpg-logo.png",
     "logo_max_width": 125,
-    "favicon": "shopify:\/\/shop_images\/icons8-hearts-64.png",
+    "favicon": "shopify:\/\/shop_images\/Kopie_van_Ontwerp_zonder_titel_2.png",
     "safe_checkout_detail": "",
     "color_primary": "#42c2ff",
     "color_secondary": "#effffd",
@@ -39,19 +39,19 @@
     "gradient_start": "#ff5f6d",
     "gradient_end": "#ffc371",
     "font_family_custom_body": false,
-    "font_family": "abril_fatface_n4",
+    "font_family": "catamaran_n6",
     "font_family_google": "",
     "font_family2": "catamaran_n6",
     "font_family2_google": "",
     "font_family3": "catamaran_n6",
     "font_family3_google": "",
-    "h1_font_size": 50,
-    "h2_font_size": 50,
-    "h3_font_size": 50,
-    "h6_font_size": 20,
-    "base_size": 18,
+    "h1_font_size": 30,
+    "h2_font_size": 30,
+    "h3_font_size": 37,
+    "h6_font_size": 14,
+    "base_size": 17,
     "font_weight_sub": "400",
-    "base_size_sup": 18,
+    "base_size_sup": 15,
     "main_linklist": "main-menu",
     "font_family_menu": "--g-font-2",
     "font_sizemenu": "22px",
@@ -84,7 +84,7 @@
     "apmenuitem_eihtml_1": false,
     "apmenuitem_ihtml_1": "",
     "apmenuitem_chtml_1": "<div class=\"row align-items-center text-center layout-column-2\">\n        <div class=\"col-12 mb-2 mt-2\">\n          <div class=\"g-banner\">\n      <figure class=\"effect-chico\">\n        <img class=\"lazyload\" data-src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0415\/5382\/1854\/files\/m4.jpg?v=1597331201\">\n        <figcaption>\n          <h2 class=\"pb-2\">Sale Off <span>50%<\/span>\n<\/h2>\n          <p>SHOP NOW<\/p>\n          <a href=\"\/collections\/sale-off\"><\/a>\n        <\/figcaption>\n      <\/figure>\n    <\/div>\n<\/div>\n<\/div>",
-    "apmenuitem_title_2": "shop",
+    "apmenuitem_title_2": "",
     "apmenuitem_width_2": 0,
     "apmenuitem_eblocklinks_2": true,
     "apmenuitem_columns_blocklinks_2": "6",
@@ -683,14 +683,14 @@
             "type": "image",
             "settings": {
               "image": "shopify:\/\/shop_images\/20210425_201913-min.jpg",
-              "image_mobile": "shopify:\/\/shop_images\/20210425_201804_1.jpg",
+              "image_mobile": "shopify:\/\/shop_images\/lcp.webp",
               "alignment": "right top",
               "text_alignment": "left center",
               "bgwrap": "#ffffff",
               "slide_toptitle": "",
               "slide_toptitle_color": "#f1f1f1",
               "slide_title": "MAKE YOUR UNIQUE KEEPSAKE FROM HOME",
-              "slide_title_color": "#ffffff",
+              "slide_title_color": "#fffafa",
               "subheading": "",
               "subheading_color": "#ffffff",
               "button_label": "SHOP KITS",
@@ -1496,7 +1496,7 @@
           "hover_transparent": false,
           "enable_white": false,
           "enable_sticky": false,
-          "enable_dropdownfull": true,
+          "enable_dropdownfull": false,
           "enabletopbar": false,
           "enable_login": false,
           "enable_social": false,
@@ -3225,7 +3225,7 @@
           "d7ed1160-bb98-47d5-ba3a-d5e19761f7af"
         ],
         "settings": {
-          "animation": "fade",
+          "animation": "",
           "paddingsection": "40px 0px 40px 0px",
           "paddingmobile": "40px 0px 40px 0px",
           "marginsection": "0px 0px 0px 0px",
@@ -3847,17 +3847,6 @@
           "link_video": "https:\/\/cdn.shopify.com\/s\/files\/1\/0507\/6097\/4513\/files\/Stopmotion_How_To_-_NO_TEXT_343964842_720x720_F30.mp4?v=1654945814"
         }
       },
-      "1654945664cfc8177b": {
-        "type": "line",
-        "settings": {
-          "animation": "",
-          "paddingsection": "30px 0px 0px 0px",
-          "marginsection": "0px 0px 0px 0px",
-          "bgsection": "#ffffff",
-          "setwidth": "container",
-          "bgborder": "#dddddd"
-        }
-      },
       "16549466356019177c": {
         "type": "newsletter",
         "settings": {
@@ -3878,7 +3867,7 @@
       "1655272727b2c076d1": {
         "type": "product-list-2",
         "settings": {
-          "animation": "zoom-in",
+          "animation": "",
           "paddingsection": "0px 0px 0px 0px",
           "paddingmobile": "60px 0px 20px 0px",
           "marginsection": "0px 0px 0px 0px",
@@ -3953,10 +3942,21 @@
           "draggable": true,
           "dots": true
         }
+      },
+      "1655507161e2a04258": {
+        "type": "line",
+        "settings": {
+          "animation": "",
+          "paddingsection": "20px 0px 0px 0px",
+          "marginsection": "0px 0px 0px 0px",
+          "bgsection": "#ffffff",
+          "setwidth": "container",
+          "bgborder": "#dddddd"
+        }
       }
     },
     "content_for_index": [
-      "1654945664cfc8177b",
+      "1655507161e2a04258",
       "1654945645d8e4df24",
       "165494088382055b93",
       "1590595440196",
@@ -3964,7 +3964,19 @@
       "1655472077910a843e",
       "1655272727b2c076d1",
       "16549466356019177c"
-    ]
+    ],
+    "blocks": {
+      "3847134708050210359": {
+        "type": "shopify:\/\/apps\/transcy-language-translate\/blocks\/switcher_embed_block\/bce4f1c0-c18c-43b0-b0b2-a1aefaa44573",
+        "disabled": false,
+        "settings": {}
+      },
+      "855628211100114053": {
+        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {}
+      }
+    }
   },
   "presets": {
     "Classic": {

@@ -65,8 +65,8 @@
           "settings": {
             "width": "50%",
             "align": "center",
-            "video_url": "https:\/\/vimeo.com\/718296458",
-            "cover_image": "shopify:\/\/shop_images\/Untitled_design_1_bef325e2-195e-4745-9a98-eb91fa9c041d.jpg",
+            "video_url": "https:\/\/vimeo.com\/718296311",
+            "cover_image": "shopify:\/\/shop_images\/Untitled_design_13_6d200d63-6faa-47ac-8e22-6edd95c759b5.jpg",
             "cover_image_position": "center center",
             "cover_image_height": "tall",
             "show_overlay": true,
@@ -77,7 +77,7 @@
         "165548313298bd6751-0": {
           "type": "html",
           "settings": {
-            "code": "<style>\n.c_c div {\nfont-size: 1rem;\n<\/style>\n<div class=\"c_c\" style=\"display: flex; flex-direction: column; gap: 20px; padding: 30px\">\n<h1>How it works?<\/h1>\n<div>\n<b>1. Create your mold<\/b><br>Mix the step 1 powder with water, and insert your hands for max 5 minutes\n<\/div>\n<div>\n<b>2. Fill your mold<\/b><br>Mix the step 2 powder, and pour into the mold. Let harden for min. 30 minutes.<\/div>\n<div>\n<b>3. Make your friends jealous<\/b><br>Tear away the mold to reveal your beautiful result. Smooth out any air-bubbles. Find a great way to display it (like our glass bulb with built-in lights 😉).<\/div>\n<div><\/div>\n<\/div>",
+            "code": "<style>\n.c_c div {\nfont-size: 1rem;\n<\/style>\n<div class=\"c_c\" style=\"display: flex; flex-direction: column; gap: 20px; padding: 30px\">\n<h1>How it works?<\/h1>\n<div>\n<b>1. Create your mold<\/b><br>Mix the step 1 powder with water, and insert baby's foot for 3 to 5 minutes\n<\/div>\n<div>\n<b>2. Fill your mold<\/b><br>Mix the step 2 powder, and pour into the mold. Let harden for min. 30 minutes.<\/div>\n<div>\n<b>3. Make your friends jealous<\/b><br>Tear away the mold to reveal your beautiful result. Smooth out any air-bubbles. Find a great way to display it (like our glass bulb with built-in lights 😉).<\/div>\n<div><\/div>\n<\/div>",
             "width": "50%",
             "align": "auto"
           }
@@ -154,7 +154,7 @@
           "settings": {
             "width": "50%",
             "align": "auto",
-            "image": "shopify:\/\/shop_images\/IMG_20220616_164750_875-min.png",
+            "image": "shopify:\/\/shop_images\/Baby_kit_stanford.jpg",
             "image_link": ""
           }
         },
@@ -197,7 +197,7 @@
             "width": "50%",
             "align": "center",
             "video_url": "https:\/\/vimeo.com\/719080357",
-            "cover_image": "shopify:\/\/shop_images\/Untitled_design_8_45ae48c6-7af7-4836-9828-1e6abfe21beb.jpg",
+            "cover_image": "shopify:\/\/shop_images\/Untitled_design_2_a42abb6f-1373-47a5-94e4-239526dedee0.jpg",
             "cover_image_position": "center center",
             "cover_image_height": "short",
             "show_overlay": true,

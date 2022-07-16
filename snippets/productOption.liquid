@@ -53,7 +53,7 @@
         data-name="{{ option.name }}"
         data-index="option{{ forloop.index }}">
   {%- for value in option.values -%}
-  <option value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value }}</option>
+  <option translate="no" value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value }}</option>
   {%- endfor -%}
 </select>
 {%- endif -%}
