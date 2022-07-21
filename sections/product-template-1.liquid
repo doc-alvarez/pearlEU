@@ -336,8 +336,36 @@
   .bundle-aggregated_reviews {
     padding-top: 10px;
   }
+  @media screen and (min-width: 1024px) {
+  .swiper {
+    display: none;
+  }
+  .customGrid {
+    display: block;
+  }
+  .product-single__title {
+    margin-bottom: 15px;
+  }
+ }
+ @media screen and (max-width: 1024px) {
+  .swiper {
+    display: block;
+  }
+  .customGrid {
+    display: none;
+  }
+ }
+ .js-qty {
+  width: 45px !important;
+ }
 
 </style>
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+/>
+
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 <div class="container js-recently-view" itemscope itemtype="http://schema.org/Product" id="ProductSection-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true" data-ajax="true" data-stock="{{ section.settings.stock_enable }}" data-handle="{{product.handle}}">
   {% assign product_image_size = '480x480' %}
   {% assign current_variant = product.selected_or_first_available_variant %}
@@ -350,7 +378,47 @@
     <div class="prod_title">
       <h1 itemprop="name" class="product-single__title">{{ product.title }}<sup><span id="ProductSaleTag-{{ section.id }}" class="{% unless product.compare_at_price > product.price %}hide{% endunless %}">
     </div>
-    <div class="col-md-6">
+    <div class="swiper" style="width: 100%; height: 100%">
+      <div class="swiper-wrapper">
+        
+        {%- for image in product.images -%}
+        <div class="swiper-slide">
+          <a href="{{ image | img_url: '1400x' }}" itemprop="contentUrl" data-size="1400x1400"
+                  class="product__photo-wrapper product__photo-wrapper-{{ section.id }} zoom_image zoom zoom_enabled"
+                  style="padding-top:{{ 1 | divided_by: image.aspect_ratio | times: 100}}%;">
+                  {% assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+                  <img loading="lazy" itemprop="thumbnail" class="lazyload {% unless image == featured_image %} lazypreload{% endunless %}"
+                      src="{{ image | img_url: '1200x' }}"
+                      data-src="{{ img_url }}"
+                      data-widths="[180, 240, 360, 480, 720, 960, 1080, 1296, 1512, 1728, 2048]"
+                      data-aspectratio="{{ image.aspect_ratio }}"
+                      data-sizes="auto"
+                      alt="{{ image.alt | escape }}">
+                </a>
+                <span class="js-scroll-button" style="display: none;">
+                  {%- render 'icon-play' -%}  
+                </span>
+        </div>
+        {% endfor %}
+        {% for media in product.media %}
+        {%- if media.media_type == 'video' -%}
+            <div class="swiper-slide">
+              {% render 'productVideo', media: media %}
+            </div>
+            <style>
+              .js-scroll-button {
+                display: block !important;
+              }
+            </style>
+         {% endif %}   
+      {% endfor %}
+      </div>
+    
+      <div class="swiper-scrollbar" style="height: 6px;"></div>
+
+    </div>
+
+    <div class="customGrid col-md-6">
       <div class="photos">
         
         
@@ -457,9 +525,10 @@
               {%- unless product.compare_at_price_max > product.price -%}
               <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
               {%- endunless -%}
-              <span id="ProductPrice-{{ section.id }}" class="product-single__price" itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
+              <span style="font-weight: 600; font-family: Roboto !important;" id="ProductPrice-{{ section.id }}" class="product-single__price" itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
                 {{ current_variant.price | money }}
-              </span>
+              </span><br>
+              <span style="padding-left: 10px;">Incl.VAT</span>
             </li>
             {% if product.compare_at_price_max > product.price %}
             <li>
@@ -478,7 +547,16 @@
          
          
         </div>
-        
+        <div style="margin-bottom: 10px; text-align: center; width: 100%; padding: 3px 14px;background-color: transparent;">
+            {% assign todayNumber =  "now" | date: "%d" %}
+            {% assign todayNumber = todayNumber | plus: 3 %}
+            <div style="display: flex; justify-content: flex-end; align-items: center; gap:14px;">
+              <span id="instock"></span>
+              <p>Order today, delivered by {{ "now" | date: "%B"}} {{ todayNumber }} </p>
+            </div>
+      
+
+          </div>
         
         {% if product.metafields.info.affiliate_link != blank %}{% comment %}AFFILIATE PRODUCT{% endcomment %}
           <a href="{{product.metafields.info.affiliate_link}}" class="my-3 btn btn-theme btn--full product-form__cart-submit {% if section.settings.enable_payment_button %}product-form__cart-submit--outline{% endif %}">
@@ -517,18 +595,9 @@
           </span>
           {%- endif -%}
 
-          <div style="margin-bottom: 10px; text-align: center; width: 100%; padding: 3px 14px;background-color: white;">
-            {% assign todayNumber =  "now" | date: "%d" %}
-            {% assign todayNumber = todayNumber | plus: 3 %}
-            <div style="display: flex; justify-content: flex-start; align-items: center; gap:14px;">
-              <span id="instock"></span>
-              <p>Order today, delivered by {{ "now" | date: "%B"}} {{ todayNumber }} </p>
-            </div>
-      
-
-          </div>
+        
           <div class="product-form__quantity-submit pt-4">
-            <div class="product-form__item product-form__item--quantity">
+            <div style="flex-shrink: 10;" class="product-form__item product-form__item--quantity">
               <label class="hide" for="Quantity">{{ 'products.product.quantity' | t }}</label>
               <input type="number" id="Quantity" name="quantity" value="1" min="1" class="product-form__input product-form__quantity">
             </div>
@@ -662,9 +731,28 @@
   {%- include 'next-prev-product' -%}
   {%- include 'photoswipe' -%}
   {%- include 'sticky-cart' -%}
-  </script>
+  
 </div>
+<script>
+  const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'horizontal',
 
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+const swiperHandler = document.querySelector('.swiper').swiper;
+let hookEl = document.querySelectorAll('.js-scroll-button');
+hookEl.forEach(hook => {
+  hook.addEventListener('click', () => {
+    swiperHandler.slideTo(swiperHandler.slides.length, 1000);
+  })
+
+})
+
+</script>
 
 {% schema %}
 {
