@@ -46,4 +46,13 @@
 
 {%- endif -%}
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    let ref = document.querySelectorAll('video');
+    ref.forEach(vid => {
+      vid.setAttribute('playsinline', true);
+    })
+  })
+</script>
+
 
