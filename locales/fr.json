@@ -597,7 +597,7 @@
         "total_already_paid_label": "Déjà payé",
         "unit_price": {
           "accessible_separator": "par",
-          "content_html": "%{price}%{accessible_separator}%{per_unit}"
+          "content_html": "%{per_unit}%{accessible_separator}%{price}"
         },
         "gift_card_ending": "Carte-cadeau se terminant par %{last_characters}",
         "estimated_tax_label": "Taxe estimée",
